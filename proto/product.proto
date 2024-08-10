@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package product;
+
+option go_package = "internal/product/pb;pb";
+
+// Service definition for ProductService
+service ProductService {
+    // RPC to get a product by ID
+    rpc GetProduct (GetProductRequest) returns (ProductResponse) {}
+
+    // RPC to create a new product
+    rpc CreateProduct (CreateProductRequest) returns (ProductResponse) {}
+
+    // RPC to update an existing product
+    rpc UpdateProduct (UpdateProductRequest) returns (ProductResponse) {}
+
+    // RPC to delete a product by ID
+    rpc DeleteProduct (DeleteProductRequest) returns (Empty) {}
+}
+
+// Request message to get a product by ID
+message GetProductRequest {
+    string id = 1;
+}
+
+// Request message to create a new product
+message CreateProductRequest {
+    string name = 1;
+    double price = 2;
+}
+
+// Request message to update an existing product
+message UpdateProductRequest {
+    string id = 1;
+    string name = 2;
+    double price = 3;
+}
+
+// Request message to delete a product by ID
+message DeleteProductRequest {
+    string id = 1;
+}
+
+// Response message for a single product
+message ProductResponse {
+    string id = 1;
+    string name = 2;
+    double price = 3;
+}
+
+// Empty message for delete operation response
+message Empty {}
