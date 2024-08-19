@@ -1,21 +1,101 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
+trash
+
 # Binaries for programs and plugins
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
-
-# Test binary, built with `go test -c`
 *.test
 
-# Output of the go coverage tool, specifically when used with LiteIDE
+# Output of the Go coverage tool, specifically when used with LiteIDE
 *.out
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+# Dependency directories (vendor/)
+vendor/
 
 # Go workspace file
 go.work
+go.work.sum
+
+# IntelliJ IDEA project files
+.idea/
+
+# VSCode directory
+.vscode/
+
+# MacOS files
+.DS_Store
+
+# Windows directory file
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+*.sqlite3
+*.pdb
+*.ldb
+*.pdb
+
+# Go build cache
+go-build/
+
+# Go module cache
+go/pkg/
+go/bin/
+go/pkg/mod/
+
+# Local Go environment directory
+env/
+
+# Go Swagger generated docs
+docs/
+
+# Test binary and coverage files
+*.test
+*.cover
+*.cov
+*.prof
+
+# Profiling data
+*.pprof
+
+# Output of the Go coverage tool
+*.out
+
+# Other Go tool artifacts
+*.a
+*.o
+*.obj
+
+# IDE specific files
+.vscode/
+.idea/
+*.iml
+
+# Node.js files if using frontend
+node_modules/
+dist/
+public/
+build/
+
+# Compiled shared objects (shared libraries)
+*.so
+
+# Generated .proto files and compiled files
+*.pb.go
+
+# Ignore built binary
+test-go
+
+# Environment variables file
+.env
+.env.local
+.env.*.local
+
+# Git directory and ignore files
+.git/
+.gitignore
+.gitattributes

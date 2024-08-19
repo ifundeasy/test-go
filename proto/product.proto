@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/ifundeasy/test-go/internal/adapters/primary/grpc/proto";
+
+// Product message defines the structure of a product entity
+message Product {
+  string id = 1;
+  string name = 2;
+  float price = 3;
+}
+
+// CreateProductRequest is the request message for creating a new product
+message CreateProductRequest {
+  string name = 1;
+  float price = 2;
+}
+
+// CreateProductResponse is the response message after creating a product
+message CreateProductResponse {
+  string id = 1;
+}
+
+// GetProductByIDRequest is the request message for retrieving a product by ID
+message GetProductByIDRequest {
+  string id = 1;
+}
+
+// GetProductByIDResponse is the response message containing the product details
+message GetProductByIDResponse {
+  Product product = 1;
+}
+
+// UpdateProductRequest is the request message for updating an existing product
+message UpdateProductRequest {
+  Product product = 1;
+}
+
+// UpdateProductResponse is the response message after updating a product
+message UpdateProductResponse {
+  bool success = 1;
+}
+
+// DeleteProductRequest is the request message for deleting a product by ID
+message DeleteProductRequest {
+  string id = 1;
+}
+
+// DeleteProductResponse is the response message after deleting a product
+message DeleteProductResponse {
+  bool success = 1;
+}
+
+// ListProductsRequest is the request message for listing all products
+message ListProductsRequest {}
+
+// ListProductsResponse is the response message containing the list of all products
+message ListProductsResponse {
+  repeated Product products = 1;
+}
+
+// ProductService defines the gRPC service for managing products
+service ProductService {
+  // Create a new product
+  rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse);
+  // Get a product by ID
+  rpc GetProductByID(GetProductByIDRequest) returns (GetProductByIDResponse);
+  // Update an existing product
+  rpc UpdateProduct(UpdateProductRequest) returns (UpdateProductResponse);
+  // Delete a product by ID
+  rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse);
+  // List all products
+  rpc ListProducts(ListProductsRequest) returns (ListProductsResponse);
+}
