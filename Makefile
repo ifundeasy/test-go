@@ -15,7 +15,7 @@ DOCKER_IMAGE=test-go:latest
 
 # Proto file
 PROTO_DIR=proto
-PROTO_OUT_DIR=internal/adapters/primary/grpc
+PROTO_OUT_DIR=internal/adapters/primary/grpc/proto
 PROTOC=$(GOCMD) run github.com/golang/protobuf/protoc-gen-go
 PROTOC_GEN_GO=protoc-gen-go
 PROTOC_GEN_GO_GRPC=protoc-gen-go-grpc

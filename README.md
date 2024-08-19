@@ -154,7 +154,7 @@ For gRPC, you'll need to generate Go files from your `.proto` definitions:
     Assuming your `.proto` files are in the `proto/` directory, run:
 
     ```bash
-   protoc -I=proto --go_out=internal/adapters/primary/grpc --go_opt=paths=source_relative --go-grpc_out=internal/adapters/primary/grpc --go-grpc_opt=paths=source_relative proto/*.proto
+   protoc -I=proto --go_out=internal/adapters/primary/grpc/proto --go_opt=paths=source_relative --go-grpc_out=internal/adapters/primary/grpc/proto --go-grpc_opt=paths=source_relative proto/*.proto
     ```
 
     This will generate the necessary Go files for gRPC in your project.
